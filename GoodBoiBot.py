@@ -18,11 +18,11 @@ async def on_message(message):
     await client.process_commands(message)
 
 @client.command(pass_context=True)
-async def ping():
+async def ping(ctx):
     await client.say("pong")
 
 @client.command(pass_context=True)
-async def square(number: int):
+async def square(ctx, number: int):
     answer = number ** 2
     await client.say(f"{number} squared is {answer}")
 
