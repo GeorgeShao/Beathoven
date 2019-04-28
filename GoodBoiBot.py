@@ -1,5 +1,4 @@
 from discord.ext.commands import Bot
-import
 
 BOT_PREFIX = "?"
 file = open("TOKEN.txt","r")
