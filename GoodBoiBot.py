@@ -7,7 +7,7 @@ BOT_PREFIX = "~"
 file = open("TOKEN.txt","r")
 TOKEN = file.read()
 
-client = commands.Bot(command_prefix = '.')
+client = commands.Bot(command_prefix = BOT_PREFIX)
 
 #Confirms that bot is connected to server
 @client.event
@@ -25,6 +25,7 @@ async def on_message(message):
 
 @client.command(name="ping", description="Ping Pong", pass_context=True)
 async def ping(ctx):
-    await client.say('Pong!')
+    # await client.say('Pong!')
+    await client.send_message(ctx.channel, "^ gay")
 
 client.run(TOKEN)
