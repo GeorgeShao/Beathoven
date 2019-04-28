@@ -16,11 +16,6 @@ async def on_message(message):
     if message.author.bot:
         return
 
-    #Checks if sent message starts with "hello" and responds
-    if message.content.lower() == "Hey":
-        msg = f"Hi {message.author.mention}"
-        await client.send_message(message.channel, msg)
-
 @client.command()
 #Command for "?ping" that responds with "Pong"
 async def ping():
