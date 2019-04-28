@@ -26,7 +26,7 @@ async def on_message(message):
 @client.command(name="ping", description="Ping Pong", pass_context=True)
 async def ping(ctx):
     # await client.say('Pong!')
-    await ctx.channel.send("gay")
+    await ctx.send("gay")
     # await client.send_message(ctx.channel, "^ gay")
 
 client.run(TOKEN)
