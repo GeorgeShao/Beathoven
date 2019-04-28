@@ -23,13 +23,8 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    channel = message.channel
-    username = message.author.name
-    time = str(message.timestamp)
-
 @client.command(name="ping", description="Ping Pong", pass_context=True)
 async def ping(ctx):
-    print(ctx.message.author.name + " has triggered ping command at " + str(ctx.message.timestamp))
     await client.say('Pong!')
 
 client.run(TOKEN)
