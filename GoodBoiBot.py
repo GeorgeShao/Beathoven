@@ -17,11 +17,11 @@ async def on_message(message):
         return
     await client.process_commands(message)
 
-@client.command()
+@client.command(pass_context=True)
 async def ping():
     await client.say("pong")
 
-@client.command()
+@client.command(pass_context=True)
 async def square(number: int):
     answer = number ** 2
     await client.say(f"{number} squared is {answer}")
