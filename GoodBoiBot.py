@@ -1,6 +1,6 @@
 from discord.ext.commands import Bot
 
-BOT_PREFIX = "?"
+BOT_PREFIX = "/gbb"
 file = open("TOKEN.txt","r")
 TOKEN = file.read()
 
@@ -17,8 +17,8 @@ async def on_message(message):
         return
 
     #Checks if sent message starts with "hello" and responds
-    if message.content.lower().startswith("hello"):
-        msg = f"Hello {message.author.mention}"
+    if message.content.lower() == "Hey":
+        msg = f"Hi {message.author.mention}"
         await client.send_message(message.channel, msg)
 
 @client.command()
