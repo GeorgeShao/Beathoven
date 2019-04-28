@@ -1,6 +1,6 @@
 from discord.ext.commands import Bot
 
-BOT_PREFIX = "/gbb"
+BOT_PREFIX = "~"
 file = open("TOKEN.txt","r")
 TOKEN = file.read()
 
@@ -15,6 +15,7 @@ async def on_message(message):
     #Prevents bot from responding to other bots, including itself.
     if message.author.bot:
         return
+    await client.process_commands(message)
 
 @client.command()
 async def ping():
