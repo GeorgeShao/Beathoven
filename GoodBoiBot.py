@@ -23,7 +23,11 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-@client.command(name="ping", description="Ping Pong", pass_context=True)
+@client.command
+async def test(author, message):
+    await message.channel.send('I heard you! {0.name}'.format(author))
+
+@client.command()
 async def ping(ctx):
     # await client.say('Pong!')
     await ctx.send("gay")
