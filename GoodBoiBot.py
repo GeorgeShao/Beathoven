@@ -2,6 +2,7 @@ from discord.ext.commands import Bot
 from discord.ext import commands
 from discord import Game
 import discord
+import random
 
 BOT_PREFIX = "~"
 file = open("TOKEN.txt","r")
@@ -23,14 +24,15 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-@client.command
-async def test(author, message):
-    await message.channel.send('I heard you! {0.name}'.format(author))
+@client.command()
+async def dice(ctx):
+    num = random.randint(1, 7)
+    await ctx.channel.send(num)
+    print("Sent message \"" + str(num) + "\" to #" + str(ctx.channel))
 
 @client.command()
 async def ping(ctx):
-    # await client.say('Pong!')
-    await ctx.send("gay")
-    # await client.send_message(ctx.channel, "^ gay")
+    await ctx.channel.send("pong")
+    print("Sent message \"pong\" to #" + str(ctx.channel))
 
 client.run(TOKEN)
