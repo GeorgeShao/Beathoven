@@ -1,3 +1,3 @@
 # GoodBoiBot
 
-**Development Status:** Development in process, not working.
+**Development Status:** Finished, may / may not receive future updates.
