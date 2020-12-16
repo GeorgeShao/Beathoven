@@ -19,12 +19,23 @@ async def on_ready():
 async def on_message(message):
     print(message.author, message.content)
     if message.author != client.user:
-        if "hi" in message.content or "hello" in message.content:
-            num = random.randint(1, 10)
-            if num == 1:
-                await message.channel.send("fuck you " + str(message.author) + "!")
-            else:
-                await message.channel.send("hi " + str(message.author) + "!")
+        if "hi" in message.content.lower() or "hello" in message.content.lower():
+            if "child" not in message.content.lower() and "high" not in message.content.lower() and "this" not in message.content.lower() and "thing" not in message.content.lower():
+                num = random.randint(1, 10)
+                if num == 1:
+                    await message.channel.send("fuck you " + str(message.author) + "!")
+                else:
+                    await message.channel.send("hi " + str(message.author) + "!")
+        if "long" in message.content.lower() and "along" in message.content.lower():
+            await message.channel.send("still not as long as my ******")
+        if "fuck" in message.content.lower() or "shit" in message.content.lower():
+            await message.channel.send("Please stop swearing senpai! UwU")
+        if "god" in message.content or "lord" in message.content:
+            await message.channel.send("Remember to capitalize the Lord's name!")
+        if "oh my god" in message.content.lower() or "oh my lord" in message.content.lower():
+            await message.channel.send("Don't use the Lord's name in vain!")
+        if "cri" in message.content.lower() or "cry" in message.content.lower():
+            await message.channel.send("awwww, are you okay? it's okay not to be okay")
     
     # Checks if message is a command
     await client.process_commands(message)
@@ -45,8 +56,13 @@ async def ping(ctx):
     print("Sent message \"pong\" to #" + str(ctx.channel))
 
 @client.command()
-async def name(ctx):
-    await ctx.channel.send("pong")
-    print("Sent message \"pong\" to #" + str(ctx.channel))
+async def coin(ctx):
+    num = random.randint(1, 2)
+    if num == 1:
+        msg = "heads"
+    else:
+        msg = "tails"
+    await ctx.channel.send(msg)
+    print(f"Sent message to \"{msg}\" {str(ctx.channel)}")
 
 client.run(TOKEN)
