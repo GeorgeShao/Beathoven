@@ -20,7 +20,7 @@ async def on_message(message):
     print(message.author, message.content)
     if message.author != client.user:
         if "hi" in message.content.lower() or "hello" in message.content.lower():
-            if "child" not in message.content.lower() and "high" not in message.content.lower() and "this" not in message.content.lower() and "thing" not in message.content.lower():
+            if "child" not in message.content.lower() and "high" not in message.content.lower() and "this" not in message.content.lower() and "thing" not in message.content.lower() and "his" not in message.content.lower():
                 num = random.randint(1, 10)
                 if num == 1:
                     await message.channel.send("fuck you " + str(message.author) + "!")
