@@ -112,4 +112,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
 CLIENT_SECRET.txt
+TOKEN.TXT
