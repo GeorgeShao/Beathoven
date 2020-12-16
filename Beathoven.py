@@ -20,7 +20,11 @@ async def on_message(message):
     print(message.author, message.content)
     if message.author != client.user:
         if "hi" in message.content or "hello" in message.content:
-            await message.channel.send("hi " + str(message.author) + "!")
+            num = random.randint(1, 10)
+            if num == 1:
+                await message.channel.send("fuck you " + str(message.author) + "!")
+            else:
+                await message.channel.send("hi " + str(message.author) + "!")
     
     # Checks if message is a command
     await client.process_commands(message)

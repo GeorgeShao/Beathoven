@@ -1,3 +1,3 @@
-# GoodBoiBot
+# Beathoven
 
-**Development Status:** Finished, may / may not receive future updates.
+A Discord bot by George Shao
