@@ -5,8 +5,8 @@ import discord
 import random
 
 BOT_PREFIX = "~"
-file = open("TOKEN.txt","r")
-TOKEN = file.read()
+file = open("CLIENT_SECRET.txt","r")
+CLIENT_SECRET = file.read()
 
 client = commands.Bot(command_prefix = BOT_PREFIX)
 
@@ -35,4 +35,4 @@ async def ping(ctx):
     await ctx.channel.send("pong")
     print("Sent message \"pong\" to #" + str(ctx.channel))
 
-client.run(TOKEN)
+client.run(CLIENT_SECRET)
