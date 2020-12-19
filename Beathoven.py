@@ -27,15 +27,26 @@ async def on_message(message):
                 else:
                     await message.channel.send("hi " + str(message.author) + "!")
         if "long" in message.content.lower() and "along" in message.content.lower():
+            await message.add_reaction("🍆")
             await message.channel.send("still not as long as my ******")
         if "fuck" in message.content.lower() or "shit" in message.content.lower():
-            await message.channel.send("Please stop swearing senpai! UwU")
+            await message.add_reaction("✝")
+            await message.add_reaction("⛪")
+            await message.channel.send("Please stop swearing senpai!")
         if "god" in message.content or "lord" in message.content:
             await message.channel.send("Remember to capitalize the Lord's name!")
+            await message.add_reaction("✝")
+            await message.add_reaction("⛪")
         if "oh my god" in message.content.lower() or "oh my lord" in message.content.lower():
             await message.channel.send("Don't use the Lord's name in vain!")
+            await message.add_reaction("✝")
+            await message.add_reaction("⛪")
         if "cri" in message.content.lower() or "cry" in message.content.lower():
+            await message.add_reaction("✝")
+            await message.add_reaction("⛪")
             await message.channel.send("awwww, are you okay? it's okay not to be okay")
+        if "joe" in message.content.lower() in message.content.lower():
+            await message.channel.send("JOE MAMA")
     
     # Checks if message is a command
     await client.process_commands(message)
@@ -54,6 +65,21 @@ async def dice(ctx):
 async def ping(ctx):
     await ctx.channel.send("pong")
     print("Sent message \"pong\" to #" + str(ctx.channel))
+
+@client.command()
+async def hug(ctx):
+    msg = str(ctx.message.content).lower()
+    print(msg)
+    full_msg = f"""
+**Interac:tm: Hug-Transfer** (but with social distancing 6ft apart)
+Sender: <@!{ctx.message.author.id}>
+Recipient: {ctx.message.content[ctx.message.content.index("<"):ctx.message.content.index(">")+1]}
+Message: {ctx.message.content[ctx.message.content.index(">")+2:]}
+---
+*This individual has AutoDeposit enabled, so all hug transfers are automatically accepted and deposited into their hug chequing account.*
+"""
+    await ctx.channel.send(full_msg)
+    print("Sent hug to " + str(ctx.channel))
 
 @client.command()
 async def coin(ctx):
