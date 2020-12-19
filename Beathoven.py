@@ -23,9 +23,9 @@ async def on_message(message):
             if "child" not in message.content.lower() and "high" not in message.content.lower() and "this" not in message.content.lower() and "thing" not in message.content.lower() and "his" not in message.content.lower():
                 num = random.randint(1, 10)
                 if num == 1:
-                    await message.channel.send("fuck you " + str(message.author) + "!")
+                    await message.channel.send(f"fuck you <@!{message.author.id}>!")
                 else:
-                    await message.channel.send("hi " + str(message.author) + "!")
+                    await message.channel.send(f"hi <@!{message.author.id}>!")
         if "long" in message.content.lower() and "along" in message.content.lower():
             await message.add_reaction("🍆")
             await message.channel.send("still not as long as my ******")
@@ -90,5 +90,6 @@ async def coin(ctx):
         msg = "tails"
     await ctx.channel.send(msg)
     print(f"Sent message to \"{msg}\" {str(ctx.channel)}")
+
 
 client.run(TOKEN)
