@@ -3,8 +3,9 @@ from discord.ext import commands
 from discord import Game
 import discord
 import random
+import time
 
-BOT_PREFIX = "~"
+BOT_PREFIX = "."
 file = open("TOKEN.txt","r")
 TOKEN = file.read()
 
@@ -90,6 +91,14 @@ async def coin(ctx):
         msg = "tails"
     await ctx.channel.send(msg)
     print(f"Sent message to \"{msg}\" {str(ctx.channel)}")
+
+
+@client.command()
+async def search(ctx):
+    num = random.randint(30, 40)
+    await ctx.channel.send("pls search")
+    print(f"Sent item search to {str(ctx.channel)}")
+    time.sleep(num)
 
 
 client.run(TOKEN)
